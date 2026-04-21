@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.Data" Version="9.6.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Documents\" />
+    <Folder Include="Controllers\Evaluations\" />
+    <Folder Include="Controllers\User\" />
+    <Folder Include="Models\Documents\" />
+    <Folder Include="Models\Evaluations\" />
+    <Folder Include="Models\User\" />
+    <Folder Include="Repositories\Documents\" />
+    <Folder Include="Repositories\Evaluations\" />
+    <Folder Include="Repositories\ProjectMembers\" />
+    <Folder Include="Repositories\Projects\" />
+    <Folder Include="Repositories\User\" />
+    <Folder Include="Security\" />
+    <Folder Include="Services\Documents\" />
+    <Folder Include="Services\Evaluations\" />
+    <Folder Include="Services\User\" />
+  </ItemGroup>
+
+</Project>
