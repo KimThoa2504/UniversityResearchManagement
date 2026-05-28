@@ -5,32 +5,38 @@ using UniversityResearchManagement.Models.Projects;
 
 namespace UniversityResearchManagement.Models.ProjectMembers
 {
-    [Table("projectmembers")]
+    [Table("ProjectMembers")]
     public class ProjectMember
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
-
-        [Column("project_id")]
-        public long ProjectId { get; set; }
-
-        [ForeignKey("ProjectId")]
-        public Project? Project { get; set; }
-
-        [Column("masinhvien")]
-        public string? MaSinhVien { get; set; }
-
-        [Column("hovaten")]
-        public string? Name { get; set; }
+        [Column("id")]
+        public int Id { get; set; }
 
         [Required]
-        public Role Role { get; set; }
-    }
-    public enum Role
-    {
-        Leader,
-        Member,
-        Supporter
+        [Column("project_id")]
+        public int ProjectId { get; set; }
+
+        [ForeignKey("ProjectId")]
+        public Project Project { get; set; } = null!;
+
+        [Column("masinhvien")]
+        [MaxLength(50)]
+        public string MaSinhVien { get; set; } = string.Empty;
+
+        [Column("hovaten")]
+        [MaxLength(255)]
+        public string HoVaTen { get; set; } = string.Empty;
+
+        [Required]
+        [Column("role")]
+        public MemberRole Role { get; set; } = MemberRole.Member;
+
+        public enum MemberRole
+        {
+            Leader,
+            Member,
+            Supporter
+        }
     }
 }

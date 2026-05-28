@@ -38,7 +38,7 @@ namespace UniversityResearchManagement.Controllers.Faculties
 
         // ================= CREATE =================
         [HttpPost]
-        public async Task<IActionResult> CreateFaculty([FromBody] Models.Faculties.Faculty faculty)
+        public async Task<IActionResult> CreateFaculty([FromBody] Faculty faculty)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace UniversityResearchManagement.Controllers.Faculties
 
         // ================= UPDATE =================
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateFaculty(long id, [FromBody] Models.Faculties.Faculty faculty)
+        public async Task<IActionResult> UpdateFaculty(long id, [FromBody] Faculty faculty)
         {
             var existing = await _context.Faculties.FindAsync(id);
 

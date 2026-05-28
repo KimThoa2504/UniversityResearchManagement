@@ -3,7 +3,7 @@ using UniversityResearchManagement.Models.Faculties;
 
 namespace UniversityResearchManagement.Services.Faculties
 {
-    public interface FacultiesService
+    public interface IFacultiesService
     {
         Task<List<Faculty>> GetFaculties();
         Task<Faculty?> GetFaculty(long id);

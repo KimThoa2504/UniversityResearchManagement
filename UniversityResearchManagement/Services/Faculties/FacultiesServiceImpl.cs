@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace UniversityResearchManagement.Services.Faculties
 {
-    public class FacultiesServiceImpl : FacultiesService
+    public class FacultiesServiceImpl : IFacultiesService
     {
         private readonly AppDbContext _context;
         public FacultiesServiceImpl(AppDbContext context)

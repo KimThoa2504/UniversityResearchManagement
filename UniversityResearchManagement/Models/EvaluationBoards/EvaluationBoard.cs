@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace UniversityResearchManagement.Models.Faculties
+namespace UniversityResearchManagement.Models.EvaluationBoards
 {
-    [Table("Faculties")]
-    public class Faculty
+    [Table("EvaluationBoards")]
+    public class EvaluationBoard
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,3 +20,4 @@ namespace UniversityResearchManagement.Models.Faculties
         public string? Description { get; set; }
     }
 }
+

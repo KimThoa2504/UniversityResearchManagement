@@ -7,41 +7,44 @@ using UniversityResearchManagement.Models.Faculties;
 
 namespace UniversityResearchManagement.Models.Projects
 {
-    [Table("projects")]
+    [Table("Projects")]
     public class Project
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+        [Column("id")]
+        public int Id { get; set; }
 
+        [Required]
         [MaxLength(255)]
-        public string? Name { get; set; }
+        [Column("name")]
+        public string Name { get; set; } = string.Empty;
 
+        [Column("description")]
         public string? Description { get; set; }
 
         [Column("start_date")]
-        public DateTime? StartDay { get; set; }
+        public DateOnly StartDate { get; set; }
 
         [Column("end_date")]
-        public DateTime? EndDay { get; set; }
+        public DateOnly EndDate { get; set; }
 
         [Required]
-        public Status Status { get; set; }
+        [Column("status")]
+        public ProjectStatus Status { get; set; } = ProjectStatus.Pending;
 
-        // ====== Foreign Key ======
         [Column("faculty_id")]
-        public long? FacultyId { get; set; }
+        public int? FacultyId { get; set; }
 
-        // ====== Navigation Property ======
         [ForeignKey("FacultyId")]
-        public virtual Faculties.Faculty? Faculty { get; set; }
-    }
+        public Faculty? Faculty { get; set; }
 
-    public enum Status
-    {
-        Pending,
-        InProgress,
-        Completed,
-        Cancelled
+        public enum ProjectStatus
+        {
+            Pending,
+            InProgress,
+            Completed,
+            Cancelled
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace UniversityResearchManagement.Controllers.ProjectMembers
 
         // ================= CREATE =================
         [HttpPost]
-        public async Task<IActionResult> Create(ProjectMember member)
+        public async Task<IActionResult> Create([FromBody] ProjectMember member)
         {
             var result = await _service.AddProjectMember(member);
             return StatusCode(201, result);
